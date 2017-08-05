@@ -4,11 +4,16 @@
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
-
+ 
   <ion-content>
+     <button class="theme-button" ion-button (click)="filter(1,filterBy)">filter</button>
+     <input type="radio" [(ngModel)]="filterBy" value="steel">steel
+     <input type="radio" [(ngModel)]="filterBy" value="furnetrue">furnuture
+     <input type="radio" [(ngModel)]="filterBy" value="nogroup">no group
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button menuClose ion-item *ngFor="let p of filteredList" (click)="openPage(p)">
         {{p.title}}
+
       </button>
     </ion-list>
   </ion-content>
