@@ -16,6 +16,8 @@ export class MyApp {
   rootPage: any = HomePage;
   filteredList : any;
   filterBy : any ="nogroup";
+  NoFilters:number=0;
+  filters:Array<{group: string , image:string}>=new Array();
   pages: Array<{title: string,group : string,id: string, items: any}>;
 
   suppliers: Array<{items:Array<{
@@ -24,32 +26,48 @@ export class MyApp {
   group: string,
   name: string,
   id: string,
+  image: string
 }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
-
     // used for an example of ngFor and navigation
    
     this.suppliers=[{
-      items:[{ name: "steel 1",price : 10 ,amount:0},{name:"steel 2",price: 20,amount:0},{name:"steel 3",price :50,amount:0}],
-      name: "steel",
-      group: "steel",
-      id : "1"
+      items:[{ name: "plumbing 1",price : 10 ,amount:0},{name:"plumbing 2",price: 20,amount:0},{name:"plumbing 3",price :50,amount:0}],
+      name: "plumbing",
+      group: "plumbing",
+      id : "1",
+      image : "../assets/img/plumbing.jpg"
     },
     {
-      items:[{name: "furneture 1",price:15 ,amount:0 },{name :"furnetrue 2" , price : 30,amount:0},{name : "furneture 3", price : 40,amount:0}],
-      name : "furneture",
-      group : "furnetrue",
-      id : "2"
+      items:[{name: "electercity 1",price:15 ,amount:0 },{name :"electercity 2" , price : 30,amount:0},{name : "electercity 3", price : 40,amount:0}],
+      name : "electercity",
+      group : "electercity",
+      id : "2",
+      image : "../assets/img/electercity.jpg"
+    },
+    {
+      items:[{name: "painting 1",price:15 ,amount:0 },{name :"painting 2" , price : 30,amount:0},{name : "painting 3", price : 40,amount:0}],
+      name : "painting",
+      group : "painting",
+      id : "3",
+      image : "../assets/img/painting.jpg"
     }
   ];
    this.pages = [
       { title: this.suppliers[0].name,group:this.suppliers[0].group,id: this.suppliers[0].id, items:this.suppliers[0].items},
      { title: this.suppliers[1].name,group:this.suppliers[1].group,id: this.suppliers[1].id, items:this.suppliers[1].items},
+     {title: this.suppliers[2].name,group: this.suppliers[2].group,id: this.suppliers[2].id,items:this.suppliers[2].items}
     ];
     this.filter(0);
+    for(var i=0;i<this.suppliers.length;i++){
+      this.NoFilters++;
+      this.filters[i]={group : this.suppliers[i].group , image : this.suppliers[i].image};
+   }
+    console.log(this.filters);
   }
+   
 
   initializeApp() {
     this.platform.ready().then(() => {

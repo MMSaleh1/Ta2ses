@@ -7,8 +7,12 @@
  
   <ion-content>
      <button class="theme-button" ion-button (click)="filter(1,filterBy)">filter</button>
-     <input type="radio" [(ngModel)]="filterBy" value="steel">steel
-     <input type="radio" [(ngModel)]="filterBy" value="furnetrue">furnuture
+     <span *ngFor="let item of filters">
+       
+      <img [src]="item.image" (click)="setFilter(item.group)">
+    
+      </span>
+    
      <input type="radio" [(ngModel)]="filterBy" value="nogroup">no group
     <ion-list>
       <button menuClose ion-item *ngFor="let p of filteredList" (click)="openPage(p)">
