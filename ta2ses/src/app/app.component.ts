@@ -15,13 +15,14 @@ import { ItemPage } from '../pages/item/item';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+  viewType:number;
+
+
   searchTerm:string;
   rootPage: any = HomePage;
   filteredList : any;
   filterBy : any ="nogroup";
-  NoFilters:number=0;
   filters:Array<{group: string , image:string}>=new Array();
-
   suppliers: Array<{items:Array<{
     name:string, price : number , amount : number
   }>,
@@ -33,12 +34,12 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public searchFilter :SearchFilterProvider) {
     this.initializeApp();
+     this.viewType=0;
     this.searchTerm="";
     // used for an example of ngFor and navigation
-   this.suppliers=this.searchFilter.filterItems();
+   this.suppliers=this.searchFilter.searchItems();
     this.filter(0);
     for(var i=0;i<this.suppliers.length;i++){
-      this.NoFilters++;
       this.filters[i]={group : this.suppliers[i].group , image : this.suppliers[i].image};
    }
   }
@@ -82,8 +83,13 @@ export class MyApp {
 
 
   search(){
-     this.suppliers = this.searchFilter.filterItems(this.searchTerm);
+     this.suppliers = this.searchFilter.searchItems(this.searchTerm);
      this.filteredList=this.suppliers;
+  }
+  setView(viewType : number){
+    this.searchTerm="";
+    this.viewType=viewType;
+    this.filter(0);
   }
   
 }

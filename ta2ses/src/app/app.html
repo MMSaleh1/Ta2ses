@@ -6,13 +6,20 @@
   </ion-header>
  
   <ion-content>
+    <ion-row>
     <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="search()" ></ion-searchbar>
-     <button class="theme-button" ion-button (click)="filter(0)">list all</button>
-     <span *ngFor="let item of filters">
-       <button (click)="filter(1,item.group)">
-      <img [src]="item.image" >
+    </ion-row>
+  <ion-row> 
+   <ion-col> <button class="theme-button" ion-button (click)="setView(0)">list all</button> </ion-col>
+   <ion-col> <button class="theme-button" ion-button (click)="setView(1)">Groups</button> </ion-col>
+  </ion-row>
+    <ion-row *ngIf="viewType ==1">
+      <ion-col col-auto *ngFor="let item of filters">
+       <button class="filter-image-button" (click)="filter(1,item.group)">
+      <img class="filter-image" [src]="item.image" >
        </button>
-      </span>
+      </ion-col>
+    </ion-row>
     <ion-list>
       <button menuClose ion-item *ngFor="let p of filteredList" (click)="openPage(p)">
         {{p.name}}

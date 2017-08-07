@@ -17,26 +17,26 @@ public suppliers :  suppliers[];
       name: "plumbing",
       group: "plumbing",
       id : "1",
-      image : "../assets/img/plumbing.jpg"
+      image : "assets/img/plumbing.jpg"
     },
     {
       items:[{name: "electercity 1",price:15 ,amount:0 },{name :"electercity 2" , price : 30,amount:0},{name : "electercity 3", price : 40,amount:0}],
       name : "electercity",
       group : "electercity",
       id : "2",
-      image : "../assets/img/electercity.jpg"
+      image : "assets/img/electercity.jpg"
     },
     {
       items:[{name: "painting 1",price:15 ,amount:0 },{name :"painting 2" , price : 30,amount:0},{name : "painting 3", price : 40,amount:0}],
       name : "painting",
       group : "painting",
       id : "3",
-      image : "../assets/img/painting.jpg"
+      image : "assets/img/painting.jpg"
     }
   ];
     
   }
-   filterItems(searchTerm=""){
+   searchItems(searchTerm=""){
         if(searchTerm ==""){
           return this.suppliers;
         }else{
