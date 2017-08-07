@@ -6,17 +6,16 @@
   </ion-header>
  
   <ion-content>
-     <button class="theme-button" ion-button (click)="filter(1,filterBy)">filter</button>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="search()" ></ion-searchbar>
+     <button class="theme-button" ion-button (click)="filter(0)">list all</button>
      <span *ngFor="let item of filters">
-       
-      <img [src]="item.image" (click)="setFilter(item.group)">
-    
+       <button (click)="filter(1,item.group)">
+      <img [src]="item.image" >
+       </button>
       </span>
-    
-     <input type="radio" [(ngModel)]="filterBy" value="nogroup">no group
     <ion-list>
       <button menuClose ion-item *ngFor="let p of filteredList" (click)="openPage(p)">
-        {{p.title}}
+        {{p.name}}
 
       </button>
     </ion-list>
