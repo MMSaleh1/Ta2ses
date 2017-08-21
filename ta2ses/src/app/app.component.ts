@@ -8,6 +8,8 @@ import 'rxjs/add/operator/debounceTime';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ItemPage } from '../pages/item/item';
+import { LoginPage }from '../pages/login/login';
+import { RegistrationPage} from '../pages/registration/registration';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,7 +21,7 @@ export class MyApp {
 
 
   searchTerm:string;
-  rootPage: any = HomePage;
+  rootPage: any = RegistrationPage;
   filteredList : any;
   filterBy : any ="nogroup";
   filters:Array<{group: string , image:string}>=new Array();
@@ -57,11 +59,13 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    
+    if(page == "HomePage"){
+      this.nav.setRoot(HomePage);
+    }else{
+      
     this.nav.setRoot(ItemPage,{data : page.items ,supplier : page.title});
   }
-
-
+  }
   filter(filter : any,group : string = "nogroup"){
     
     if(filter ==0 || group =="nogroup"){
@@ -80,8 +84,6 @@ export class MyApp {
        }
     }
   }
-
-
   search(){
      this.suppliers = this.searchFilter.searchItems(this.searchTerm);
      this.filteredList=this.suppliers;

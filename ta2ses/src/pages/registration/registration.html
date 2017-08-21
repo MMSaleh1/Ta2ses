@@ -1,0 +1,91 @@
+<!--
+  Generated template for the RegisterationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+   <form [formGroup]="regesterForm" (ngSubmit)="onRegester()">
+  <ion-grid>
+  
+  <ion-row class="regestration-row">
+    <ion-col col-3>
+     <ion-icon name="mail" class="icon"></ion-icon>
+    </ion-col>
+    
+    <ion-col >
+     <ion-input  type="text" name="name" formControlName="name" placeholder="name"></ion-input>
+     <div *ngIf="regesterForm.controls['name'].invalid && regesterBefore == true">
+       enter valed name
+     </div>
+    </ion-col>
+    </ion-row>
+
+
+  <ion-row class="regestration-row">
+    <ion-col col-3>
+     <ion-icon name="mail" class="icon"></ion-icon>
+    </ion-col>
+    <ion-col >
+     <ion-input  type="password" name="password" formControlName="password" placeholder="password"></ion-input>
+     <div *ngIf="regesterForm.controls['password'].invalid && regesterBefore == true">
+       enter valed password
+     </div>
+    </ion-col>
+    </ion-row>
+  <ion-row class="regestration-row">
+    <ion-col col-3>
+     <ion-icon name="mail" class="icon"></ion-icon>
+    </ion-col>
+    <ion-col >
+     <ion-input  type="email" name="email" formControlName="email" placeholder="email"></ion-input>
+     <div *ngIf="regesterForm.controls['email'].invalid && regesterBefore == true">
+       enter valed email
+     </div>
+    </ion-col>
+    </ion-row>
+  <ion-row class="regestration-row">
+    <ion-col col-3>
+     <ion-icon name="mail" class="icon"></ion-icon>
+    </ion-col>
+    <ion-col >
+     <ion-input  type="text" name="address" formControlName="address" placeholder="address"></ion-input>
+     <div *ngIf="regesterForm.controls['address'].invalid && regesterBefore == true">
+       enter valed address
+     </div>
+    </ion-col>
+    </ion-row>
+  <ion-row class="regestration-row">
+    <ion-col col-3>
+     <ion-icon name="mail" class="icon"></ion-icon>
+    </ion-col>
+    <ion-col >
+     <ion-input  type="text" name="phone" formControlName="phone" placeholder="phone" pattern="[0-9]*"></ion-input>
+     <div *ngIf="regesterForm.controls['phone'].invalid && regesterBefore == true">
+       enter valed phone
+     </div>
+    </ion-col>
+    </ion-row>
+  <ion-row class="regestration-row">
+    <ion-col col-3>
+     <ion-icon name="mail" class="icon"></ion-icon>
+    </ion-col>
+    <ion-col >
+      <div>male</div>
+    </ion-col>
+    <ion-col>
+     <input  type="radio" name="gender" value="male" formControlName="gender">
+    </ion-col>
+    <ion-col>
+      female
+    </ion-col>
+    <ion-col>
+     <input  type="radio" name="gender" value="female" formControlName="gender">
+    </ion-col>
+    </ion-row>
+  <ion-row>
+      <button ion-button type="submit" class="regestration-bottom" block>Sign up</button>
+  </ion-row>
+  </ion-grid>
+   </form>
+</ion-content>

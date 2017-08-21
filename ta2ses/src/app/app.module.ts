@@ -7,17 +7,25 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ItemPage} from '../pages/item/item';
+import { LoginPage} from '../pages/login/login';
+import {RegistrationPage} from '../pages/registration/registration';
+import {FpPage}from '../pages/fp/fp';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SearchFilterProvider } from '../providers/search-filter/search-filter';
+import { HeaderComponent } from '../components/header/header';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    ItemPage 
+    ItemPage,
+    RegistrationPage,
+    LoginPage,
+    FpPage,
+    HeaderComponent
     
   ],
   imports: [
@@ -30,7 +38,10 @@ import { SearchFilterProvider } from '../providers/search-filter/search-filter';
     MyApp,
     HomePage,
     ListPage,
-    ItemPage
+    ItemPage,
+    RegistrationPage,
+    LoginPage,
+    FpPage
   ],
   providers: [
     StatusBar,

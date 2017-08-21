@@ -7,6 +7,11 @@
  
   <ion-content>
     <ion-row>
+       <button  ion-button class="theme-button" (click)="openPage('HomePage')">
+        Home
+      </button>
+    </ion-row>
+    <ion-row>
     <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="search()" ></ion-searchbar>
     </ion-row>
   <ion-row> 
