@@ -6,7 +6,7 @@
       <ion-card-content>
         {{post.content}}
       </ion-card-content>
- 
+      <div *ngIf="!post.isliked && !post.isdesliked">
       <ion-row>
         <ion-col col-3>
           <button ion-button icon-left clear small (click)="like(index)">
@@ -20,8 +20,17 @@
             <div>{{post.dislikes}}</div>
           </button>
         </ion-col>
-        
       </ion-row>
+      </div>
+      <div *ngIf="post.isliked">
+      <ion-col>
+      <p>you and {{post.likes}} like this</p>
+      </ion-col>
+    </div>
+    <div *ngIf="post.isdesliked">
+      <p>you and {{post.dislikes}} dislike this</p>
+    </div>
+
 </ion-card>
   <button class="theme-button" ion-button  menuToggle>Toggle Menu</button>
 </ion-content>

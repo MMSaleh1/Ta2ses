@@ -21,24 +21,70 @@ export class MyApp {
 
 
   searchTerm:string;
-  rootPage: any = RegistrationPage;
+  rootPage: any = HomePage;
   filteredList : any;
   filterBy : any ="nogroup";
   filters:Array<{group: string , image:string}>=new Array();
   suppliers: Array<{items:Array<{
     name:string, price : number , amount : number
   }>,
+  
   group: string,
   name: string,
   id: string,
   image: string
 }>;
+groups: Array<{
+  name: string ,
+  id : string ,
+  image : string
+}>
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public searchFilter :SearchFilterProvider) {
     this.initializeApp();
      this.viewType=0;
     this.searchTerm="";
     // used for an example of ngFor and navigation
+    this.groups= new Array();
+    this.groups=[
+      {
+        name : "plumbing",
+        id : "1",
+        image : "assets/img/plumbing.jpg"
+    },
+      {
+        name : "Cabels",
+        id : "2",
+        image : "assets/img/cables.jpg"
+    },
+      {
+        name : "isolation",
+        id : "3",
+        image : "assets/img/isolation.jpg"
+        },
+      {
+        name : "constructionChemicals",
+        id : "4",
+        image : "assets/img/constructionChemicals.jpg"
+        },{
+          name : "GypsumBoard",
+          id : "5",
+          image : "assets/img/GypsumBoard.jpg"
+        },{
+          name : "AirConditioning",
+          id : "6",
+          image : "assets/img/AirConditioning.jpg"
+        },{
+          name : "electricity",
+          id : "7",
+          image : "assets/img/electercity.jpg"
+        },{
+          name : "painting",
+          id : "8",
+          image : "assets/img/painting.jpg"
+        },
+  ]
+
    this.suppliers=this.searchFilter.searchItems();
     this.filter(0);
     for(var i=0;i<this.suppliers.length;i++){
@@ -63,7 +109,7 @@ export class MyApp {
       this.nav.setRoot(HomePage);
     }else{
       
-    this.nav.setRoot(ItemPage,{data : page.items ,supplier : page.title});
+    this.nav.setRoot(ItemPage,{data : page ,supplier : page.name});
   }
   }
   filter(filter : any,group : string = "nogroup"){

@@ -19,8 +19,8 @@
    <ion-col> <button class="theme-button" ion-button (click)="setView(1)">Groups</button> </ion-col>
   </ion-row>
     <ion-row *ngIf="viewType ==1">
-      <ion-col col-auto *ngFor="let item of filters">
-       <button class="filter-image-button" (click)="filter(1,item.group)">
+      <ion-col col-3 *ngFor="let item of groups">
+       <button class="filter-image-button" (click)="filter(1,item.name)">
       <img class="filter-image" [src]="item.image" >
        </button>
       </ion-col>

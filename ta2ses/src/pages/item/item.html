@@ -16,10 +16,24 @@
  
 
 <ion-content padding>
+  <ion-row class="item-provider">
+    <ion-col>
+      <img class="item-provider-logo" [src]="data.image">
+    </ion-col>
+      
+    <ion-col>
+        <div class="item-provider-name">{{data.name}}</div>
+        <p>{{data.group}}</p>
+    </ion-col>
+    <ion-col>
+        <button class="theme-button" (click)="openPage()" ion-button  >profile</button>
+    </ion-col>
+  </ion-row>
+  
   <div class="items-cont">
   <ion-scroll scrollY="true" style="height: 100%;">
   <ion-list>
-    <div *ngFor="let item of data ; let index = index ; trackBy:trackByIndex;">
+    <div *ngFor="let item of items ; let index = index ; trackBy:trackByIndex;">
     <ion-item >
       <ion-row>
         <ion-col>
@@ -32,7 +46,7 @@
         <button class="rest-button" ion-button>
            <ion-icon  calss="icon" name="remove" (click)="changeNumber('remove',index)"></ion-icon>
         </button>
-        <input [(ngModel)]="data[index].amount" type="number" class="rest-input">
+        <input [(ngModel)]="items[index].amount" type="number" class="rest-input">
         <button class="rest-button" ion-button> 
           <ion-icon  name="add" (click)="changeNumber('add',index)"></ion-icon>
         </button>
@@ -41,11 +55,11 @@
         </div>
         </div>
       </ion-col >
-      <!---
+      
       <ion-col  class="rest-img-cont">
-      <img  [src]="item.imageUrl">
+      <img  [src]="item.image">
       </ion-col>
-    !-->  
+    
     </ion-row>
     </ion-item>
     </div>
@@ -54,5 +68,5 @@
   </ion-scroll>
 
   </div>
-
+  
 </ion-content>

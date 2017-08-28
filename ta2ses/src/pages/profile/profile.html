@@ -1,0 +1,32 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>{{name}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-row class="provider">
+    <ion-col>
+      <img class="provider-logo" [src]="supplier.image">
+    </ion-col>
+      
+    <ion-col>
+        <div class="provider-name">{{supplier.name}}</div>
+        <p>{{supplier.group}}</p>
+    </ion-col>
+  </ion-row>
+  <div class="provider-desc">
+    {{supplier.desc}}
+  </div>
+        
+</ion-content>

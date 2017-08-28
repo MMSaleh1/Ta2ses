@@ -2,8 +2,21 @@ page-item {
     background-color: #000000;
 }
 
-
-
+.item-provider{
+    border-bottom: solid;
+    border-top: solid;
+    height: 20%;
+    //margin-top: 44px;
+}
+.item-provider-name{
+    font-size: 23px;
+}
+.item-provider-logo{
+    max-width: 100%;
+    border: 0;
+    height: 100%;
+    border-radius: 60%;
+}
 
 .items-cont{
     height: 100%;
@@ -13,8 +26,9 @@ page-item {
     width: 30%;
 }
 .item-header{
-        font-size: 24px;
+        font-size: 17px;
     color: #000000;
+    white-space: normal;
 }
 .rest-input{
     width:20%;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import {ProfilePage} from '../profile/profile';
 /**
  * Generated class for the ItemPage page.
  *
@@ -14,10 +15,13 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ItemPage {
   public data :any;
+  public items :any;
   public name : any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.data = navParams.get("data");
+    this.items = this.data.items;
     this.name = navParams.get("supplier");
+    console.log(this.data);
   }
 
   ionViewDidLoad() {
@@ -25,22 +29,25 @@ export class ItemPage {
   }
   changeNumber(func : String,index : any){
     if(func == 'add'){
-      this.data[index].amount++;
+      this.items[index].amount++;
     }else{
-      if(this.data[index].amount!=0){
+      if(this.items[index].amount!=0){
 
-          this.data[index].amount--;
+          this.items[index].amount--;
       }
       
     }
-    console.log(this.data[index].amount);
+    console.log(this.items[index].amount);
   }
    order(){
     let totalPrice =0;
-    for(let i =0; i< this.data.length;i++){
-      totalPrice += (this.data[i].amount*this.data[i].price);
+    for(let i =0; i< this.items.length;i++){
+      totalPrice += (this.items[i].amount*this.items[i].price);
     }
     console.log(totalPrice);
+  }
+  openPage(){
+    this.navCtrl.push(ProfilePage,{"supplier" : this.data});
   }
 
 }

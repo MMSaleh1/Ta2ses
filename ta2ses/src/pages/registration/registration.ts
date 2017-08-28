@@ -47,9 +47,6 @@ export class RegistrationPage {
       if(this.regesterForm.valid){
         this.navCtrl.setRoot(HomePage,{userdata:this.user});
       }
-      //this.natStorage.getItem('code').then(code=>{
-      //  console.log(code);
-     // })
      
      
     }

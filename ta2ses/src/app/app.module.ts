@@ -10,6 +10,7 @@ import { ItemPage} from '../pages/item/item';
 import { LoginPage} from '../pages/login/login';
 import {RegistrationPage} from '../pages/registration/registration';
 import {FpPage}from '../pages/fp/fp';
+import {ProfilePage} from '../pages/profile/profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +26,8 @@ import { HeaderComponent } from '../components/header/header';
     RegistrationPage,
     LoginPage,
     FpPage,
-    HeaderComponent
+    HeaderComponent,
+    ProfilePage
     
   ],
   imports: [
@@ -41,7 +43,8 @@ import { HeaderComponent } from '../components/header/header';
     ItemPage,
     RegistrationPage,
     LoginPage,
-    FpPage
+    FpPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
