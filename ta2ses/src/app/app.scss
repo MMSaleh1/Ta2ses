@@ -15,7 +15,16 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 .theme-button{
-    background-color: #000000;
+    background-color: #3e2412;;
+}
+.theme-header{
+    background-color: rgba(83, 72, 63, 0.91) !important;
+}
+.theme-body{
+    background-color: rgba(150, 131, 116, 0.91);
+}
+.theme-text{
+    color : white;
 }
 .filter-image{
     //width: 40px;
@@ -25,4 +34,7 @@
     width: 40px;
     height: 40px;
     background-color: transparent;
+}
+.page{
+    background-color: rgba(150, 131, 116, 0.91);
 }

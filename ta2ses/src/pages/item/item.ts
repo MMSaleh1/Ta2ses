@@ -44,7 +44,8 @@ export class ItemPage {
     for(let i =0; i< this.items.length;i++){
       totalPrice += (this.items[i].amount*this.items[i].price);
     }
-    console.log(totalPrice);
+    let tot = "Your total price is : "+totalPrice;
+    alert(tot);
   }
   openPage(){
     this.navCtrl.push(ProfilePage,{"supplier" : this.data});

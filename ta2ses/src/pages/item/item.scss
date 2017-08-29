@@ -27,7 +27,7 @@ page-item {
 }
 .item-header{
         font-size: 17px;
-    color: #000000;
+    color: #ffffff;
     white-space: normal;
 }
 .rest-input{
@@ -37,7 +37,6 @@ page-item {
 .rest-button{
     width: 13px;
     height: 19px;
-    background-color: #000000;
 }
 .rest-item-price{
     text-align: center;
@@ -47,5 +46,9 @@ page-item {
 }
 .icon{
     color: #ffffff;
-    background-color: #000000;
+    background-color: inherit;
+}
+.item-body{
+    color: white;
+    background-color: #4e3b2e;
 }

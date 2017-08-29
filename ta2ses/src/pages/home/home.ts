@@ -11,6 +11,7 @@ export class HomePage {
   public posts :Array<{
     name : string;
     content : string;
+    image : string;
     likes: number;
     dislikes:number;
     isliked :boolean;
@@ -21,6 +22,7 @@ export class HomePage {
     this.posts=[{
       name : "post1",
       content : "this is post nubmer 1 , testing long contents for over flowing",
+      image: "",
       likes : 0,
       dislikes : 0,
       isliked :false,
@@ -28,6 +30,7 @@ export class HomePage {
     },{
       name : "post2",
       content : "this is post nubmer 2",
+      image: "",
       likes : 0,
       dislikes : 0,
       isliked :false,
@@ -35,6 +38,7 @@ export class HomePage {
     },{
       name : "post3",
       content : "this is post nubmer 3",
+      image: "",
       likes : 0,
       dislikes : 0,
       isliked :false,
@@ -42,6 +46,7 @@ export class HomePage {
     },{
       name : "post4",
       content : "this is post nubmer 4",
+      image: "",
       likes : 0,
       dislikes : 0,
       isliked :false,

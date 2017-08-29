@@ -1,11 +1,11 @@
 <ion-menu [content]="content">
-  <ion-header>
+  <ion-header class="theme-header">
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title class="theme-text">Menu</ion-title>
     </ion-toolbar>
   </ion-header>
  
-  <ion-content>
+  <ion-content class="theme-body">
     <ion-row>
        <button  ion-button class="theme-button" (click)="openPage('HomePage')">
         Home
@@ -19,14 +19,14 @@
    <ion-col> <button class="theme-button" ion-button (click)="setView(1)">Groups</button> </ion-col>
   </ion-row>
     <ion-row *ngIf="viewType ==1">
-      <ion-col col-3 *ngFor="let item of groups">
+      <ion-col col-3 *ngFor="let item of groups" >
        <button class="filter-image-button" (click)="filter(1,item.name)">
       <img class="filter-image" [src]="item.image" >
        </button>
       </ion-col>
     </ion-row>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of filteredList" (click)="openPage(p)">
+      <button menuClose ion-item class="theme-body theme-text" *ngFor="let p of filteredList" (click)="openPage(p)">
         {{p.name}}
 
       </button>
